@@ -20,4 +20,17 @@ public lista insertarN(lista lis){
 			p=p.siguiente;
 		}
 	}
+    public void buscar(lista lis, int dat){
+        boolean encontrado=false;
+        nodo elemento_lis = lis.primero;
+        while(encontrado!=true){
+            if(dat==elemento_lis.dato){
+                encontrado=true;
+                System.out.println("el elemento encontrado es: "+elemento_lis.dato);
+            }
+            else{
+                elemento_lis=elemento_lis.siguiente;
+            }    
+        }
+    }
 }
