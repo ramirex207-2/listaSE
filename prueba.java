@@ -12,6 +12,7 @@ public class prueba {
 		oper.mostrar(olis);
         System.out.println("ingrese dato a buscar ");
         int datoB= leer.nextInt();
-        oper.buscar(olis, datoB);
+        //oper.buscar(olis, datoB);
+        oper.contar(olis, datoB);   
 	}
 }
