@@ -12,36 +12,54 @@ public lista insertarN(lista lis){
 	}
 	return lis;
     }
-	public void mostrar(lista lis){
+	public void mostrar(lista lis)
+	{
 		nodo p = lis.primero;
 		while(p!=null) {
 			System.out.println(p.dato);
-			p=p.siguiente;
+			p=p.sig;
 		}
 	}
-    public void buscar(lista lis, int dat){
-        nodo elemento_lis = lis.primero;
-        while(elemento_lis!=null){
-            if(dat==elemento_lis.dato){
-                System.out.println("el elemento encontrado es: "+elemento_lis.dato);
-                elemento_lis= elemento_lis.siguiente;
-                break;
-            }
-            else{
-                elemento_lis=elemento_lis.siguiente;
-            }
-        }
-    }
-    public void contar(lista lis, int dato){
-        nodo elemento= lis.primero;
-        int contador=0;
-        while(elemento!=null){
-            contador++;
-            if(elemento.dato==dato){
-                System.out.println(" "+contador);
-            }
-            elemento=elemento.siguiente;
-        }
-        //System.out.println("la lista tiene "+contador+" elementos");
-    }
+	public void buscar(lista lis, int dato) {
+		nodo elem=lis.primero;
+		int contador=0;
+		while(elem!=null) {
+			if(dato==elem.dato) {
+				contador++;
+				System.out.println("el elemento encontrado es: "+elem.dato+" en la posicion "+contador);
+				elem=elem.sig;
+			}
+			else {
+				elem=elem.sig;
+			}
+		}
+	}
+	public void eliminar(lista lis, int dato) {
+		nodo elem=lis.primero;
+		while(elem!=null) {
+			if(dato==elem.dato) {
+				lis.primero=lis.primero.sig;
+				elem=elem.sig;	
+			}
+			else {
+				elem=elem.sig;
+			}
+		}
+	}
+	public void ordenar(lista lis) {
+	nodo  p = lis.primero;
+		while(p!=null) {
+				nodo j=p.sig;
+				while(j!=null) {
+					if(p.dato > j.dato) {
+						int aux = j.dato;
+						j.dato=p.dato;
+						p.dato=aux;
+					}
+					j=j.sig;
+				}
+			p=p.sig;	
+		}
+	
+	}
 }

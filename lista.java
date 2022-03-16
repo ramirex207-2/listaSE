@@ -11,13 +11,13 @@ public class lista {
 	}
 	public void insertar(int d) {
 		nodo nuevo= new nodo(d);
-		nuevo.siguiente=primero;
+		nuevo.sig=primero;
 		primero=nuevo;
 	}
 	public void eliminar(){
 		if(!lista_Vacia())
 		{
-			primero= primero.siguiente;
+			primero= primero.sig;
 		}
 	}
     
